@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import studio.okaria.fluxrss.Adapter.FeedAdapter;
+import studio.okaria.fluxrss.Adapter.NewsAdapter;
 import studio.okaria.fluxrss.Common.HTTPDataHandler;
 import studio.okaria.fluxrss.Model.RSSObject;
 
@@ -30,32 +30,28 @@ public class FluxSport extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fluxligue1);
-        int pleinEcran = (int) WindowManager.LayoutParams.FLAG_FULLSCREEN ; getWindow().setFlags(pleinEcran,pleinEcran);
+        int pleinEcran = WindowManager.LayoutParams.FLAG_FULLSCREEN ; getWindow().setFlags(pleinEcran,pleinEcran);
 
-        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Sport");
         setSupportActionBar(toolbar);
 
-        recyclerView = (RecyclerView)findViewById(R.id.recycler);
+        recyclerView = findViewById(R.id.recycler);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getBaseContext(), LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(linearLayoutManager);
 
         loadRSS();
-
-
-
-
     }
 
     private void loadRSS() {
         AsyncTask<String,String,String> loadRSSAsync = new AsyncTask<String, String, String>() {
 
-            ProgressDialog mDialog = new ProgressDialog(FluxSport.this);
+            ProgressDialog progressDialog = new ProgressDialog(FluxSport.this);
 
             @Override
             protected void onPreExecute() {
-                mDialog.setMessage("Attendez s'il vous plait...");
-                mDialog.show();
+                progressDialog.setMessage("Attendez s'il vous plait...");
+                progressDialog.show();
 
             }
 
@@ -63,15 +59,15 @@ public class FluxSport extends AppCompatActivity {
             protected String doInBackground(String... params){
                 String result;
                 HTTPDataHandler http = new HTTPDataHandler();
-                result = http.GetHTTPData(params[0]);
+                result = http.getData(params[0]);
                 return result;
             }
 
             @Override
             protected void onPostExecute(String s){
-                mDialog.dismiss();
+                progressDialog.dismiss();
                 rssObject = new Gson().fromJson(s,RSSObject.class);
-                FeedAdapter adapter = new FeedAdapter(rssObject,getBaseContext());
+                NewsAdapter adapter = new NewsAdapter(rssObject,getBaseContext());
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
 
@@ -79,9 +75,7 @@ public class FluxSport extends AppCompatActivity {
 
         };
 
-        StringBuilder url_get_data = new StringBuilder(RSS_to_Json_API);
-        url_get_data.append(RSS_link);
-        loadRSSAsync.execute(url_get_data.toString());
+        loadRSSAsync.execute(RSS_to_Json_API + RSS_link);
 
     }
 

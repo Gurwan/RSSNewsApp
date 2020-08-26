@@ -6,39 +6,40 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Allows to connect the app to the feed
+ */
 public class HTTPDataHandler {
-    static String stream = null;
 
-    public HTTPDataHandler() {
+    static String ret = null;
 
-    }
-
-    public String GetHTTPData(String urlString) {
+    public String getData(String urlS) {
         try {
-            URL url = new URL(urlString);
+            URL url = new URL(urlS);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 
             if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                InputStream in = new BufferedInputStream(urlConnection.getInputStream());
 
-                BufferedReader r = new BufferedReader((new InputStreamReader(in)));
+                InputStream inputStream = new BufferedInputStream(urlConnection.getInputStream());
+
+                BufferedReader bufferedReader = new BufferedReader((new InputStreamReader(inputStream)));
                 StringBuilder sb = new StringBuilder();
                 String line;
-                while ((line = r.readLine()) != null)
+
+                while ((line = bufferedReader.readLine()) != null) {
                     sb.append(line);
-                stream = sb.toString();
+                }
+
+                ret = sb.toString();
                 urlConnection.disconnect();
 
             }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return stream;
+        return ret;
     }
 }
