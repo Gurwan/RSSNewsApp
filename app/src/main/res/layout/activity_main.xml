@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    tools:layout_editor_absoluteY="81dp"
+    android:background="@drawable/fondhalloween"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false">
+
+            <Button
+                android:id="@+id/buttonActualite"
+                android:layout_width="288dp"
+                android:layout_height="122dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/actualitebanner" />
+
+            <Button
+                android:id="@+id/buttonInternet"
+                android:layout_width="288dp"
+                android:layout_height="122dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="170dp"
+                android:background="@drawable/internetbanner" />
+
+            <Button
+                android:id="@+id/buttonLigue1"
+                android:layout_width="288dp"
+                android:layout_height="122dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="320dp"
+                android:background="@drawable/footballbanner" />
+
+            <Button
+                android:id="@+id/buttonFrance"
+                android:layout_width="288dp"
+                android:layout_height="122dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="470dp"
+                android:background="@drawable/francebanner" />
+
+            <Button
+                android:id="@+id/buttonInternational"
+                android:layout_width="288dp"
+                android:layout_height="122dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="620dp"
+                android:background="@drawable/internationalbanner" />
+
+            <Button
+                android:id="@+id/buttonSport"
+                android:layout_width="288dp"
+                android:layout_height="122dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="770dp"
+                android:background="@drawable/sportbanner" />
+
+            <Button
+                android:id="@+id/buttonJeuxVideo"
+                android:layout_width="288dp"
+                android:layout_height="122dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="920dp"
+                android:background="@drawable/jeuxvideobanner" />
+
+            <Button
+                android:id="@+id/buttonHistoire"
+                android:layout_width="288dp"
+                android:layout_height="122dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="1070dp"
+                android:background="@drawable/histoirebanner" />
+
+
+
+            //    android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp" //
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
