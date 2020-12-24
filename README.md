@@ -1,4 +1,41 @@
-# fluxRSS-android-app
-This app is an RSS feed reader. The application is divided into several themes, each with its own flow. 
-For example, sport, politics, France, history, football. . . 
-The application was developed in android studio in October 2019 and corrected in August 2020.
+ <p align="center">
+  <strong> RSSNewsApp </strong>
+  </p>
+<hr> </hr>
+
+<p align="center"> RSSNewsApp is a mobile app developed for android. This app was developed during my first year of graduate studies (fall 2019). </p>
+
+<hr> </hr>
+
+<p> This application allows you to read news through RSS feeds. <br> The application is divided into several categories : </p>
+
+<ul>
+  <li>
+    General news
+  </li>
+  <li>
+    Internet
+  </li>
+  <li>
+    Football
+  </li>
+  <li>
+    French news
+  </li>
+  <li>
+    International news
+  </li>
+  <li>
+    Sport
+  </li>
+  <li>
+    Video games
+  </li>
+  <li>
+    History
+  </li>
+</ul>
+<hr> </hr>
+  
+<p align="center">This application is coded in Java with the Android Studio IDE.</p>
+
