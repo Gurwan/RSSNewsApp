@@ -39,3 +39,9 @@
   
 <p align="center">This application is coded in Java with the Android Studio IDE.</p>
 
+<hr> </hr>
+
+<h3> How install the app ? </h3>
+
+<a href="https://github.com/Gurwan/RSSNewsApp/releases/download/1.0.0/1.0.0.apk">APK Version</a>
+
