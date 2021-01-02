@@ -36,6 +36,23 @@
   </li>
 </ul>
 <hr> </hr>
+
+<h3> Screenshots </h3>
+
+<p align="center">
+  <img src="https://github.com/Gurwan/RSSNewsApp/blob/master/doc/homeview.jpg" width="500" style="max-width:100%;"><br>
+  Visual 1 - Home page
+</p>
+
+<br>
+
+
+<p align="center">
+  <img src="https://github.com/Gurwan/RSSNewsApp/blob/master/doc/infoview.jpg" width="500" style="max-width:100%;"><br>
+  Visual 2 - Category page
+</p>
+
+<hr> </hr>
   
 <p align="center">This application is coded in Java with the Android Studio IDE.</p>
 
